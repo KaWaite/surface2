@@ -2,6 +2,7 @@ package surface2
 
 import (
 	"fmt"
+	"io"
 	"math"
 )
 
@@ -17,7 +18,7 @@ const (
 var sin30, cos30 = math.Sin(angle), math.Cos(angle) // sin(30°), cos(30°)
 
 // Create function will create and print the sin cos svg
-func Create() {
+func Create(out io.Writer) {
 	fmt.Printf("<svg xmlns='http://www.w3.org/2000/svg' "+
 		"style='stroke: orange; stroke-width:0.7; background: black' "+
 		"width='%d' height='%d'>", width, height)
